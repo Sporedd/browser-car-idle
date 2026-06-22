@@ -24,7 +24,7 @@ class ShowroomController extends Controller
 
         $showroomInventory->update(['price_override' => $validated['price']]);
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function resetPrice(Request $request, ShowroomInventory $showroomInventory): RedirectResponse
@@ -33,7 +33,7 @@ class ShowroomController extends Controller
 
         $showroomInventory->update(['price_override' => null]);
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     private function authorizeAndTick(Request $request, int $gameStateId): GameState

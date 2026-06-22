@@ -40,7 +40,7 @@ class TransportController extends Controller
         $transportVehicle->returns_at = null;
         $transportVehicle->save();
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     private function authorizeAndTick(Request $request, int $gameStateId): GameState

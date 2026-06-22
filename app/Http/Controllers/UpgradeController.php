@@ -23,7 +23,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $resourceNode->increment('speed_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function mineStorage(Request $request, ResourceNode $resourceNode): RedirectResponse
@@ -34,7 +34,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $resourceNode->increment('storage_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function factorySpeed(Request $request, FactoryLine $factoryLine): RedirectResponse
@@ -45,7 +45,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $factoryLine->increment('speed_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function transportCapacity(Request $request, TransportVehicle $transportVehicle): RedirectResponse
@@ -56,7 +56,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $transportVehicle->increment('capacity_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function transportSpeed(Request $request, TransportVehicle $transportVehicle): RedirectResponse
@@ -67,7 +67,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $transportVehicle->increment('speed_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function showroomStaff(Request $request, Showroom $showroom): RedirectResponse
@@ -78,7 +78,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $showroom->increment('staff_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function showroomMarketing(Request $request, Showroom $showroom): RedirectResponse
@@ -89,7 +89,7 @@ class UpgradeController extends Controller
         $this->deductMoney($gameState, $cost);
         $showroom->increment('marketing_level');
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     private function authorizeGameState(Request $request, int $gameStateId): GameState

@@ -47,7 +47,7 @@ class FactoryController extends Controller
             $factoryLine->save();
         });
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     public function toggleQuality(Request $request, FactoryLine $factoryLine): RedirectResponse
@@ -56,7 +56,7 @@ class FactoryController extends Controller
 
         $factoryLine->update(['quality_mode' => ! $factoryLine->quality_mode]);
 
-        return to_route('game');
+        return back(302, [], route('game'));
     }
 
     private function authorizeAndTick(Request $request, int $gameStateId): GameState
