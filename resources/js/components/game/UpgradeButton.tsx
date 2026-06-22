@@ -10,14 +10,14 @@ interface Props {
 
 export function formatMoney(amount: number): string {
     if (amount >= 1_000_000) {
-return `$${(amount / 1_000_000).toFixed(1)}M`
+return `€${(amount / 1_000_000).toFixed(1)}M`
 }
 
     if (amount >= 1_000) {
-return `$${(amount / 1_000).toFixed(1)}k`
+return `€${(amount / 1_000).toFixed(1)}k`
 }
 
-    return `$${amount.toFixed(0)}`
+    return `€${amount.toFixed(0)}`
 }
 
 export default function UpgradeButton({ href, label, cost, money }: Props) {
